@@ -32,19 +32,13 @@ public class Book {
                     inverseJoinColumns = @JoinColumn(name = "categoriestobooks_category_id"))
     private List <Category> categorylist;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "book_author_id",referencedColumnName = "author_id")
     private Author author;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_publisher_id",referencedColumnName = "publisher_id")
     private Publisher publisher;
-
-    //@ManyToMany(fetch = FetchType.LAZY)
-    //    @JoinTable(
-    //            name = "pro2colors",
-    //            joinColumns = {@JoinColumn(name = "pro2colors_product_id")},
-    //            inverseJoinColumns = {@JoinColumn(name = "pro2colors_color_id")}
 
     public Book() {
     }
