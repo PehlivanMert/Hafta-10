@@ -10,8 +10,12 @@ public class App {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("LibraryManagementSystem");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction(); //Önce Factory sonra Manager oluştur.
+        Book book1 = entityManager.find(Book.class, 1);
+        Book book2 = entityManager.find(Book.class, 2);
 
 
+        transaction.begin();
 
+        transaction.commit();
     }
 }
