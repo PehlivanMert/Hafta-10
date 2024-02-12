@@ -19,9 +19,11 @@ public class BookBorrowing {
     @Column(name = "borrower_email",nullable = false,unique = true)
     private String borrowerEmail;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "borrowing_date",nullable = false)
     private LocalDate borrowingDate;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "return_date",nullable = false)
     private LocalDate returnDate;
 
